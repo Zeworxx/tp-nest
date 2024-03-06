@@ -4,6 +4,13 @@ body {
     padding: 20px;
 }
 
+.content{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    width: 100vw;
+}
+
 h1 {
     margin-bottom: 20px;
 }
@@ -29,7 +36,7 @@ button {
 }
 
 #userList {
-    max-width: 400px;
+    max-width: 600px;
 }
 
 #users {

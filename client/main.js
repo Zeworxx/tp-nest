@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/users', {
+      const response = await fetch('http://localhost:3000/api/user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchUsers() {
     try {
-      const response = await fetch('http://localhost:3000/api/users');
+      const response = await fetch('http://localhost:3000/api/user');
       const users = await response.json();
-      users.forEach((user) => addUserToList(user));
+      if (users) {
+        users.forEach((user) => addUserToList(user));
+      }
     } catch (error) {
       console.error('Error fetching users:', error);
     }
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addUserToList(user) {
     const listItem = document.createElement('li');
-    listItem.textContent = `${user.firstName} ${user.lastName} - ${user.email}`;
+    listItem.textContent = `firstName : ${user.firstName}/ lastName : ${user.lastName} / email : ${user.email}`;
     usersList.appendChild(listItem);
   }
 
