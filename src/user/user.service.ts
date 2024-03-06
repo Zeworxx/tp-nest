@@ -32,7 +32,6 @@ export class UserService {
 
   private async saveUsers(users: User[]): Promise<void> {
     try {
-      console.log(users);
       await fs.writeFile(this.dbFilePath, JSON.stringify(users, null, 2));
     } catch (error) {
       console.error(error);
