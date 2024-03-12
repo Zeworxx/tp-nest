@@ -4,6 +4,8 @@ import { User } from './user.model';
 
 @Injectable()
 export class UserService {
+  constructor() {}
+
   private dbFilePath = `src/user/users.json`;
 
   async addUser(user: User): Promise<User> {
